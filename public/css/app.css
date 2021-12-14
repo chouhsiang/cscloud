@@ -1,8 +1,94 @@
 :root {
   --bs-primary: #42a4dd;
+  --bs-primary-dark: #42a4dd;
   --bs-gray: #cdcdcd;
+  --bs-gray1: #727272;
   --bs-gray2: #F2F2F2;
+  --bs-gray3: #E5E5E5;
   --bs-dark: #252525;
+}
+
+.bg-gray3 {
+  background-color: var(--bs-gray3);
+}
+
+.btn {
+  border-radius: 8px;
+  font-weight: bold;
+}
+
+.btn-primary {
+  background-color: var(--bs-primary);
+  border-color: var(--bs-primary);
+}
+.btn-primary:hover {
+  background-color: var(--bs-primary-dark);
+  border-color: var(--bs-primary);
+}
+
+.btn-outline-primary {
+  color: var(--bs-primary);
+  border-color: var(--bs-primary);
+}
+.btn-outline-primary:hover {
+  background-color: var(--bs-primary);
+  border-color: var(--bs-primary);
+}
+
+main[class=market] .card .img {
+  padding-bottom: 100%;
+}
+main[class=market] .card h2 {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+main[class=market] .card .type {
+  color: var(--bs-gray1);
+  margin-bottom: 0.5rem;
+}
+
+main[class=wordpress] .card .img {
+  width: 144px;
+  padding-bottom: 100%;
+}
+main[class=wordpress] .card-body {
+  max-width: 1000px;
+  margin: auto;
+}
+main[class=wordpress] h1 {
+  font-size: 36px;
+  font-weight: bold;
+}
+main[class=wordpress] hr {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+main[class=wordpress] .type {
+  color: var(--bs-gray1);
+  margin-bottom: 0.5rem;
+}
+main[class=wordpress] h2 {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+main[class=wordpress] .content p {
+  margin-bottom: 4rem;
+}
+
+main[class=create] .card .img {
+  width: 144px;
+  padding-bottom: 100%;
+}
+main[class=create] .icon .card-body {
+  max-width: 1000px;
+  margin: auto;
+}
+main[class=create] h2 {
+  font-weight: bold;
+  font-size: 20px;
+  margin-bottom: 2rem;
 }
 
 .row {
@@ -22,7 +108,6 @@ main {
   padding: 0 2.5rem;
   border-radius: 0.75rem;
   border: unset;
-  height: 100%;
 }
 .card .card-header {
   background-color: unset;

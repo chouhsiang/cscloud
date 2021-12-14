@@ -14,5 +14,24 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
 });
+
+Route::get('/market/apps', function () {
+    return view('market');
+});
+
+Route::get('/market/apps/wordpress', function () {
+    return view('wordpress');
+});
+
+Route::get('/apps/create/wordpress', function () {
+    return view('create');
+});
+
+
+Route::get('/apps/create/custom', function () {
+    return view('custom');
+});
+
+
