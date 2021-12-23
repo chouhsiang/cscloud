@@ -34,4 +34,9 @@ Route::get('/apps/create/custom', function () {
     return view('custom');
 });
 
+Route::get('/apps', function () {
+    return view('apps');
+});
+
+
 

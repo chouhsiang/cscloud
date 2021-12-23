@@ -8,6 +8,21 @@
   --bs-dark: #252525;
 }
 
+.badge {
+  font-size: 0.875rem;
+  padding: 0.4rem 0.8rem;
+}
+
+.badge-success {
+  background-color: #ddfdda;
+  color: #45a025;
+}
+
+.badge-secondary {
+  background-color: #f2f2f2;
+  color: #727272;
+}
+
 .bg-gray3 {
   background-color: var(--bs-gray3);
 }
@@ -44,6 +59,19 @@ main[class=market] .card h2 {
   margin-bottom: 0.5rem;
 }
 main[class=market] .card .type {
+  color: var(--bs-gray1);
+  margin-bottom: 0.5rem;
+}
+
+main[class=apps] .card .img {
+  padding-bottom: 100%;
+}
+main[class=apps] .card h2 {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+main[class=apps] .card .type {
   color: var(--bs-gray1);
   margin-bottom: 0.5rem;
 }
@@ -179,18 +207,6 @@ main {
   padding: 0.875rem;
   min-height: 3.5rem;
   vertical-align: middle;
-}
-.card .card-body .table .badge {
-  font-size: 0.875rem;
-  padding: 0.4rem 0.8rem;
-}
-.card .card-body .table .badge-success {
-  background-color: #ddfdda;
-  color: #45a025;
-}
-.card .card-body .table .badge-secondary {
-  background-color: #f2f2f2;
-  color: #727272;
 }
 .card .card-body .table .logo {
   width: 24px;

@@ -11,6 +11,21 @@ $primary: #42a4dd;
     --bs-dark: #252525;
 }
 
+.badge {
+    font-size: 0.875rem;
+    padding: 0.4rem 0.8rem;
+}
+
+.badge-success {
+    background-color: #ddfdda;
+    color: #45a025;
+}
+
+.badge-secondary {
+    background-color: #f2f2f2;
+    color: #727272;
+}
+
 .bg-gray3 {
     background-color: var(--bs-gray3);
 }
@@ -43,6 +58,26 @@ $primary: #42a4dd;
 
 
 main[class="market"] {
+    .card {
+        .img {
+            padding-bottom: 100%;
+        }
+
+        h2 {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .type {
+            color: var(--bs-gray1);
+            margin-bottom: 0.5rem;
+        }
+
+    }
+}
+
+main[class="apps"] {
     .card {
         .img {
             padding-bottom: 100%;
@@ -233,20 +268,7 @@ main {
                 vertical-align: middle;
             }
 
-            .badge {
-                font-size: 0.875rem;
-                padding: 0.4rem 0.8rem;
-            }
 
-            .badge-success {
-                background-color: #ddfdda;
-                color: #45a025;
-            }
-
-            .badge-secondary {
-                background-color: #f2f2f2;
-                color: #727272;
-            }
 
             .logo {
                 width: 24px;

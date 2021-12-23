@@ -2,14 +2,15 @@
 @section('body')
     <main class="market">
 
-            <div class="container">
-                <div class="row">
-                    @for ($i = 0; $i < 8; $i++)
+        <div class="container">
+            <div class="row">
+                @for ($i = 0; $i < 8; $i++)
                     <div class="col-xl-3 col-lg-4 col-md-6">
                         <div class="card">
                             <div class="card-body">
                                 <div class="row mb-4">
                                     <div class="col-6">
+
                                         <div class="img w-100 bg-gray3 rounded-circle"></div>
                                     </div>
                                     <div class="col-6 d-flex flex-column justify-content-around">
@@ -24,9 +25,9 @@
                             </div>
                         </div>
                     </div>
-                    @endfor
-                </div>
+                @endfor
             </div>
+        </div>
 
     </main>
 @endsection
