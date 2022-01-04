@@ -38,5 +38,9 @@ Route::get('/apps', function () {
     return view('apps');
 });
 
+Route::get('/apps/1', function () {
+    return view('app');
+});
+
 
 

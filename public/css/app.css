@@ -132,6 +132,24 @@ main {
   margin-bottom: 5rem;
 }
 
+.accordion-item {
+  border-radius: 0.75rem !important;
+}
+.accordion-item > div {
+  padding: 30px 40px;
+}
+.accordion-item .accordion-header {
+  margin-bottom: 0 !important;
+}
+.accordion-item .accordion-button {
+  padding: 30px 40px;
+  border-radius: 0.75rem !important;
+  color: #212529;
+  background-color: white;
+  box-shadow: unset;
+  margin-bottom: 0 !important;
+}
+
 .card {
   padding: 0 2.5rem;
   border-radius: 0.75rem;
@@ -230,8 +248,8 @@ main {
 #mem {
   width: 100%;
 }
-
-svg {
+#cpu svg,
+#mem svg {
   width: 100%;
   fill: none;
   stroke: var(--bs-primary);
@@ -263,4 +281,48 @@ svg {
 }
 .legend.legend-gray {
   background-color: var(--bs-gray2);
+}
+
+.app .link .btn {
+  text-align: left;
+  font-size: 20px;
+  margin-bottom: 1rem;
+}
+.app .link .btn svg {
+  margin-right: 1rem;
+  width: 25px;
+}
+.app h2, .app .accordion-button {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+.app #basic {
+  font-size: 18px;
+}
+.app .update {
+  font-size: 14px;
+  color: #727272;
+  float: right;
+}
+.app th,
+.app td {
+  padding-left: 0 !important;
+  font-size: 1.125rem;
+  padding: 0.875rem;
+  min-height: 3.5rem;
+  vertical-align: middle;
+  border-color: #dee2e6;
+}
+.app .table > :not(:first-child) {
+  border-top: 2px solid #dee2e6;
+}
+.app .event .btn {
+  width: 100%;
+  text-align: left;
+  height: 56px;
+  line-height: 43px;
+}
+.app .event .btn-light {
+  background-color: #F0F4F6;
 }

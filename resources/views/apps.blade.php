@@ -1,11 +1,16 @@
 @extends('layout')
 @section('body')
+    <style>
+        .card:hover{
+            transform:  scale(1.03);
+        }
+        </style>
     <main class="apps">
         <div class="container">
             <div class="row">
                 @for ($i = 0; $i < 8; $i++)
                 <div class="col-lg-6">
-                    <div class="card">
+                    <div class="card pe-auto" onclick="location.href='/apps/1'" style="cursor: pointer;" >
                         <div class="card-body d-flex">
                             <div class="me-4" style="width: 100px">
                                 <div class="img w-100 bg-gray3 rounded-circle"></div>
