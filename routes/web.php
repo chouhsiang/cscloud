@@ -1,6 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AppController;
+use App\Http\Controllers\ChartController;
+use App\Http\Controllers\HomeController;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,18 +17,22 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Auth::routes();
+
+Route::get('/', [HomeController::class, 'index'])->name('home');
+
+
+Route::resource('apps', AppController::class);
+Route::resource('charts', ChartController::class);
+
+/*
 Route::get('/', function () {
     return view('home');
-});
+});*/
 
-Route::get('/market/apps', function () {
-    return view('market');
-});
 
-Route::get('/market/apps/wordpress', function () {
-    return view('wordpress');
-});
 
+/*
 Route::get('/apps/create/wordpress', function () {
     return view('create');
 });
@@ -41,6 +49,9 @@ Route::get('/apps', function () {
 Route::get('/apps/1', function () {
     return view('app');
 });
+*/
+
+
 
 
 

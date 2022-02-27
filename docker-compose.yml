@@ -1,0 +1,35 @@
+version: "3.5"
+services:
+  caddy:
+    image: caddy:2.4.6-alpine
+    depends_on:
+      - php
+    volumes:
+      - caddy_data:/data
+      - caddy_config:/config
+    ports:
+      - 80:80
+      - 443:443
+    command: caddy reverse-proxy --from www.nycucs.cloud --to php:80 
+
+  php:
+    build: .
+    depends_on:
+      - postgres
+    volumes:
+      - ./:/var/www/
+
+  postgres:
+    image: postgres:14.2
+    environment:
+      - POSTGRES_USER=cscloud
+      - POSTGRES_PASSWORD=cscloud
+    ports:
+      - 5432:5432
+    volumes:
+      - PGDATA:/var/lib/postgresql/data
+
+volumes:
+  caddy_data:
+  caddy_config:
+  PGDATA:
