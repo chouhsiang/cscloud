@@ -1,16 +1,17 @@
 version: "3.5"
 services:
   caddy:
+    build: ./.config/caddy
     image: caddy:2.4.6-alpine
     depends_on:
       - php
     volumes:
       - caddy_data:/data
       - caddy_config:/config
+      - ./.kube:/root/.kube
     ports:
       - 80:80
       - 443:443
-    command: caddy reverse-proxy --from www.nycucs.cloud --to php:80 
 
   php:
     build: .

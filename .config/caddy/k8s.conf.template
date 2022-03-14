@@ -1,0 +1,13 @@
+<DOMAIN_LIST> {
+    reverse_proxy {
+        to <IP_LIST>
+        lb_policy ip_hash
+    }
+
+    log {
+        output file /var/log/caddy/main-k8s.log {
+            roll_keep_for 30d
+        }
+    }
+}
+ 
