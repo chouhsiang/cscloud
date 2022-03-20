@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Auth;
 class HelmService
 {
 
-    public function shell($command)
+    public static function shell($command)
     {
         $process = new Process(explode(' ', $command));
 
