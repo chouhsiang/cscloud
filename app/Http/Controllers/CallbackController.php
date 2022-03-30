@@ -45,7 +45,7 @@ class CallbackController extends Controller
             'uid' => $token->getIdToken()->getClaim($required['id']),
             'name' => $token->getIdToken()->getClaim($required['chinese_name']),
             'username' => $token->getIdToken()->getClaim($required['uid']),
-            'email' => $token->getIdToken()->getClaim($required['email']) . '@cs.nycu.edu.tw',
+            'email' => $token->getIdToken()->getClaim($required['email']),
             //'remember_token' => strval($token->getToken())
         ];
         if (!isset($user)) {
