@@ -78,7 +78,9 @@ return [
     |
      */
     'required_claims' => [
-        'groups',
-        'uid'
+        'uid' => 'uid',
+        'id' => 'id',
+        'email' => 'id',
+        'chinese_name' => 'chinese_name',
     ],
 ];

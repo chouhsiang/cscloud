@@ -6,6 +6,7 @@ use App\Http\Controllers\ChartController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\OauthLoginController;
 use App\Http\Controllers\CallbackController;
+use App\Http\Controllers\KubeApiController;
 use Illuminate\Support\Facades\Auth;
 
 /*
@@ -32,10 +33,11 @@ Route::middleware('web')->get(
 
 Route::resource('apps', AppController::class);
 Route::resource('charts', ChartController::class);
+Route::resource('kubeapi', KubeApiController::class)->middleware('auth');
 
-// Route::get('/home', function () {
-//     return view('home2');
-// });
+Route::get('/home', function () {
+     return view('home2');
+});
 
 
 

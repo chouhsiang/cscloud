@@ -11,16 +11,18 @@ class OauthLoginController extends Controller
     //
     protected $provider;
 
+    public function __construct(OIDCProviderService $service)
+    {
+        $this->provider = $service->getProvider();
+    }
+
     public function login(OIDCProviderService $service){
         if (!Auth::user()){
-            $this->provider = $service->getProvider();
             $url = $this->provider->getAuthorizationUrl();
             session()->flash('oidc-auth.state', $this->provider->getState());
             return redirect($url);
         } else {
-            Auth::logout();
-            session()->reflash();
-            dd(session());
+            return redirect(route('home'));
         }
     }
     public function logout(){

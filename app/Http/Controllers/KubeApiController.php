@@ -19,8 +19,9 @@ class KubeApiController extends Controller
 
     public function index()
     {
-        //https://10.1.1.50:8443/api/v1/namespaces
-        $res = $this->apiService->getTemplate("https://10.1.1.50:8443/api/v1/namespaces");
+        //https://10.1.1.50:8443/api/v1/namespaces/{namespace}/pods -> get namespace
+        $res = $this->apiService->getTemplate(config("app.cluster_url") . "/api/v1/namespaces/","test-namespace/pods");
+        dd(json_decode($res));
     }
 
     /**
@@ -30,7 +31,7 @@ class KubeApiController extends Controller
      */
     public function create()
     {
-        //
+        //Deployment    
     }
 
     /**

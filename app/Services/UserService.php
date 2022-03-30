@@ -11,7 +11,7 @@ class UserService
         $newUserData = [
             'uid'       => $userData['uid'],
             'name'      => $userData['name'],
-            'email'     => $userData['email'] . '@cs.nctu.edu.tw',
+            'email'     => $userData['email'],
             'username'      => $userData['username'],
             //'remember_token'    => $userData['remember_token'],
         ];

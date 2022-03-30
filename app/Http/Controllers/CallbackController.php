@@ -39,13 +39,14 @@ class CallbackController extends Controller
         $required = config('oidc-auth.required_claims');
         
         session(['oidc-auth.access_token' => $token]);
+        
         $user = User::where('uid', $token->getIdToken()->getClaim('id'))->first();
         $userData = [
-            'uid' => $token->getIdToken()->getClaim('id'),
-            'name' => $token->getIdToken()->getClaim('chinese_name'),
-            'username' => $token->getIdToken()->getClaim('uid'),
-            'email' => $token->getIdToken()->getClaim('uid') . '@cs.nycu.edu.tw',
-            //'remember_token' => $token->getToken()
+            'uid' => $token->getIdToken()->getClaim($required['id']),
+            'name' => $token->getIdToken()->getClaim($required['chinese_name']),
+            'username' => $token->getIdToken()->getClaim($required['uid']),
+            'email' => $token->getIdToken()->getClaim($required['email']) . '@cs.nycu.edu.tw',
+            //'remember_token' => strval($token->getToken())
         ];
         if (!isset($user)) {
             UserService::firstOrCreateUser($userData);
