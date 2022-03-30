@@ -29,7 +29,7 @@ class AppServiceProvider extends ServiceProvider
         Validator::extend('lower_alpha_num', function ($attribute, $value, $parameters, $validator) {
             return is_string($value) && preg_match('/^[a-z0-9]+$/u', $value);
         }, "The :attribute must only contain lower case letters and numbers.");
-        URL::forceScheme('https');
+        // URL::forceScheme('https');
         Helm::add_repo();
     }
 }
