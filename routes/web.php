@@ -21,6 +21,10 @@ Auth::routes();
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
+Route::get('/home', function()
+{
+    return redirect('/');
+});
 
 Route::resource('apps', AppController::class);
 Route::resource('charts', ChartController::class);

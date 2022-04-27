@@ -11,13 +11,14 @@ class HelmService
 
     public function shell($command)
     {
+       
         $process = new Process(explode(' ', $command));
 
         $process->run();
         if (!$process->isSuccessful()) {
-            dd($process->getErrorOutput());
+            dd($process->getErrorOutput(), $command);
         }
-        return json_decode($process->getOutput(), true);
+        return $process->getOutput();
     }
 
     public static function add_repo()
@@ -29,11 +30,11 @@ class HelmService
     public static function list()
     {
         $user = Auth::user()->username;
-        $data = self::shell("helm list -n $user -o json");
+        $data = json_decode(self::shell("helm list -n $user -o json"), true);
 
         foreach ($data as $i => $d) {
             $cmd = "helm get values {$d['name']} -n $user -o json";
-            $data[$i]['domain'] =  self::shell($cmd)['ingress']['hostname'];
+            $data[$i]['domain'] =  json_decode(self::shell($cmd), true)['ingress']['hostname'];
             $data[$i]['icon'] =  Chart::where('name', explode('-', $data[$i]['chart'])[0])->first()->icon;
         }
         return $data;
@@ -42,8 +43,6 @@ class HelmService
 
     public static function install($name, $chart, $env)
     {
-
-       
         $user = Auth::user()->username;
         $repo = Chart::firstwhere('name', $chart)->value('repo');
         $env = join(' ', preg_filter('/^/', '--set ', $env));
@@ -55,10 +54,10 @@ class HelmService
     {
         $user = Auth::user()->username;
         $cmd = "helm list -f $name -n $user -o json";
-        $list_data = self::shell($cmd)[0];
+        $list_data = json_decode(self::shell($cmd), true)[0];
 
         $cmd = "helm status $name -n $user -o json";
-        $status_data = self::shell($cmd);
+        $status_data = json_decode(self::shell($cmd), true);
 
         $data = array_merge($list_data,  $status_data);
         $data['chart_name'] = explode('-', $data['chart'])[0];

@@ -16,7 +16,7 @@ class ChartSeeder extends Seeder
     public function run()
     {
         $data = [[
-            'name' => 'wordress',
+            'name' => 'wordpress',
             'repo' => 'bitnami',
             'icon' => 'https://bitnami.com/assets/stacks/wordpress/img/wordpress-stack-220x234.png',
             'description' => 'WordPress是一個以PHP和MySQL為平台的自由開源的部落格軟體和內容管理系統。',

@@ -16,21 +16,23 @@ services:
   php:
     build: .
     depends_on:
-      - postgres
+      - mariadb
     volumes:
       - ./:/var/www/
 
-  postgres:
-    image: postgres:14.2
+  mariadb:
+    image: mariadb:10.7
     environment:
-      - POSTGRES_USER=cscloud
-      - POSTGRES_PASSWORD=cscloud
-    ports:
-      - 5432:5432
+      - MYSQL_ROOT_PASSWORD=cscloud
+      - MYSQL_DATABASE=cscloud
+      - MYSQL_USER=cscloud
+      - MYSQL_PASSWORD=cscloud
     volumes:
-      - PGDATA:/var/lib/postgresql/data
+      - mariadb:/var/lib/mysql
+    ports:
+      - 127.0.0.1:3306:3306
 
 volumes:
   caddy_data:
   caddy_config:
-  PGDATA:
+  mariadb:

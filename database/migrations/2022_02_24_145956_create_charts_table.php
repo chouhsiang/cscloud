@@ -13,7 +13,7 @@ class CreateChartsTable extends Migration
      */
     public function up()
     {
-        Schema::create('helm_charts', function (Blueprint $table) {
+        Schema::create('charts', function (Blueprint $table) {
             $table->id();
             $table->string('name');
             $table->string('repo')->nullable();

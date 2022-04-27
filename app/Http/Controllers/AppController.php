@@ -75,6 +75,7 @@ class AppController extends Controller
         $domain =  $request->domain;
         $envs = [
             'ingress.enabled=true',
+            'wordpressSkipInstall=true',
             "ingress.hostname=$user-$domain.nycucs.cloud",
             'persistence.enabled=false',
             'mariadb.primary.persistence.enabled=false'
