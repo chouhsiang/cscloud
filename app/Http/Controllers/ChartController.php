@@ -35,7 +35,7 @@ class ChartController extends Controller
      */
     public function create()
     {
-        //
+        return view('charts.create');
     }
 
     /**
@@ -46,7 +46,8 @@ class ChartController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Chart::create($request->all());
+        return redirect()->route('charts.index');
     }
 
     /**
@@ -69,7 +70,8 @@ class ChartController extends Controller
      */
     public function edit($id)
     {
-        //
+      $chart = Chart::find($id);
+      return view('charts.edit', compact('chart'));
     }
 
     /**
@@ -79,9 +81,10 @@ class ChartController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Chart $chart)
     {
-        //
+      $chart->update($request->all());
+      return redirect()->route('charts.show', $chart->name);
     }
 
     /**
@@ -92,6 +95,8 @@ class ChartController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $chart = Chart::find($id);
+        $chart->delete();
+        return redirect()->route('charts.index');
     }
 }
