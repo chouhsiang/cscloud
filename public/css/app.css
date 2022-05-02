@@ -11351,19 +11351,6 @@ h2, .h2 {
   border-color: var(--bs-primary);
 }
 
-main[class=market] .card .img {
-  padding-bottom: 100%;
-}
-main[class=market] .card h2, main[class=market] .card .h2 {
-  font-size: 20px;
-  font-weight: bold;
-  margin-bottom: 0.5rem;
-}
-main[class=market] .card .type {
-  color: var(--bs-gray1);
-  margin-bottom: 0.5rem;
-}
-
 main[class=apps] .card .img {
   padding-bottom: 100%;
 }
